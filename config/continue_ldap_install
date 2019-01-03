@@ -11,7 +11,6 @@ systemctl enable slapd
 systemctl start slapd
 
 yum -y install httpd
-yum -y install epel-release
 yum -y install phpldapadmin
 # some source editing
 # Tell SE linux what's going on, so that it doesn't freek
