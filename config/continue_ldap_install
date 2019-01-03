@@ -1,3 +1,39 @@
+#!/bin/bash
+#https://www.server-world.info/en/note?os=CentOS_7&p=openldap
+#This is a basis for students to create a fully functioning build, compile, and deploy script.
+
+yum -y install openldap-servers openldap-clients
+
+cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG 
+chown ldap. /var/lib/ldap/DB_CONFIG
+
+systemctl enable slapd
+systemctl start slapd
+
+yum -y install httpd
+yum -y install epel-release
+yum -y install phpldapadmin
+# some source editing
+# Tell SE linux what's going on, so that it doesn't freek
+setsebool -P httpd_can_connect_ldap on
+
+systemctl enable httpd
+systemctl start httpd
+
+sed -i 's,Require local,#Require local\n    Require all granted,g' /etc/httpd/conf.d/phpldapadmin.conf
+
+# decent config guide: http://www.itzgeek.com/how-tos/linux/centos-how-tos/install-configure-phpldapadmin-centos-7-ubuntu-16-04.html
+
+
+
+#Note: LDAP comes up completely insecure, with Anonymous login enabled by default... this is not a good and happy thing, so fix 
+#it in the config file
+#(prompt for user input), the following is currently a manual config, but could be automated fairly easily
+#slappasswd
+#open tcp port 389
+#
+
+
 echo "dn: olcDatabase={2}hdb,cn=config
 changetype: modify
 replace: olcSuffix
