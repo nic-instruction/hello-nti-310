@@ -25,4 +25,6 @@ gcloud compute instances create rsyslog-server2 \
 
    * Note: the tags are very important, they grant https and http access to your instance.  Do not include them on things that do 
 not need this access.  
-   * Note that your image family will be ubuntu-1604-lts and your image-project will be ubuntu-os-cloud for your client.          * Also, very important: test the heck out of your startup scripts.  Durring the final I can't help you troubleshoot, you are on your own, so make sure your scripts are working perfectly before the final, bearing in mind that things can still go wrong.
+   * Note that your image family will be ubuntu-1604-lts and your image-project will be ubuntu-os-cloud for your client. 
+   
+   * Also, very important: test the heck out of your startup scripts.  Durring the final I can't help you troubleshoot, you are on your own, so make sure your scripts are working perfectly before the final, bearing in mind that things can still go wrong.
