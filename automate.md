@@ -13,9 +13,9 @@ your auotmation must run in under 20 minutes.
 Here's an example of a gcloud compute command:
 
 ```
-gcloud compute instances create django-a --metadata-from-file django=/django-server-auto.sh /
---image-family=centos-7 /
---tags "http-server","https-server"
+gcloud compute instances create django-a --metadata-from-file django=/django-server-auto.sh \
+--image-family=centos-7 \
+--tags "http-server","https-server" \
 --zone us-east1-b
 ```
 
