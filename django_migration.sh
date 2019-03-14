@@ -33,8 +33,14 @@ perl -i -pe 's/DATABASES = {
         'NAME': 'myproject',
         'USER': 'myprojectuser',
         'PASSWORD': 'password',
-        'HOST': 'postgres-b',
+        'HOST': 'postgres-a',
         'PORT': '5432',
     }
 }/g' ~/myproject/myproject/settings.py
 
+# Make sure postgres-a (or your postgres server) is configured with this line in vim /var/lib/pgsql/data/pg_hba.conf
+# host    all             all               0.0.0.0/0            md5
+# instead of 
+# host    all             all             127.0.0.1/32            ident
+python manage.py makemigrations
+python manage.py migrate
