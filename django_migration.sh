@@ -22,21 +22,7 @@ pip install django psycopg2
 django-admin.py startproject myproject .
 
 #edit the config file to uptdate your db with relevent credentials
-perl -i -pe 's/DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}/DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'postgres-a',
-        'PORT': '5432',
-    }
-}/g' ~/myproject/myproject/settings.py
+wget -O ~/myproject/myproject/settings.py https://github.com/nic-instruction/hello-nti-310/blob/master/settings.py
 
 # Make sure postgres-a (or your postgres server) is configured with this line in vim /var/lib/pgsql/data/pg_hba.conf
 # host    all             all               0.0.0.0/0            md5
