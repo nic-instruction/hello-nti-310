@@ -380,7 +380,7 @@ $servers->setValue('login','attr','dn');
 /* The password for the dn above. */
 // $servers->setValue('auto_number','pass',null);
 /* Enable anonymous bind login. */
-// $servers->setValue('login','anon_bind',true);
+$servers->setValue('login','anon_bind',false);
 /* Use customized page with prefix when available. */
 #  $servers->setValue('custom','pages_prefix','custom_');
 /* If you set this, then only these DNs are allowed to log in. This array can
@@ -471,7 +471,7 @@ $servers->setValue('auto_number','search_base',null);
 $servers->setValue('auto_number','min',array('uidNumber'=>1000,'gidNumber'=>500));
 $servers->setValue('auto_number','dn',null);
 $servers->setValue('auto_number','pass',null);
-$servers->setValue('login','anon_bind',true);
+$servers->setValue('login','anon_bind',false);
 $servers->setValue('custom','pages_prefix','custom_');
 $servers->setValue('unique','attrs',array('mail','uid','uidNumber'));
 $servers->setValue('unique','dn',null);
