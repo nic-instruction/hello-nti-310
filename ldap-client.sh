@@ -9,7 +9,7 @@ sed -i 's/password        \[success=1 user_unknown=ignore default=die\]     pam_
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sed -i 's/base dc=example,dc=net/base dc=nti310,cd=local/g' /etc/ldap.conf
 sed -i 's,uri ldapi:///,uri ldap://ldap,g' /etc/ldap.conf
-sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadmn,dc=nti310,dc=local/g' /etc/ldap.conf
+sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadm,dc=nti310,dc=local/g' /etc/ldap.conf
 systemctl restart libnss-ldap
 
 systemctl restart sshd
