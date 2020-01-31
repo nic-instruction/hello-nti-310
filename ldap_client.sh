@@ -13,10 +13,10 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_
 sed -i 's/base dc=example,dc=net/base dc=nti310,cd=local/g' /etc/ldap.conf
 sed -i 's,uri ldapi:///,uri ldap://ldap,g' /etc/ldap.conf
 sed -i 's/rootbinddn cn=manager,dc=example,dc=net/rootbinddn cn=ldapadm,dc=nti310,dc=local/g' /etc/ldap.conf
-sed -i 's/#nss_base_group          ou=Group,dc=padl,dc=com\?one/nss_base_group          ou=Group,dc=nti310,dc=local/g' /etc/ldap.conf
-sed -i 's/#nss_base_passwd ou=People,dc=padl,dc=com\?one/nss_base_passwd ou=People,dc=nti310,dc=local/g' /etc/ldap.conf
-sed -i 's/#nss_base_shadow ou=People,dc=padl,dc=com\?one/nss_base_shadow ou=People,dc=nti310,dc=local/g' /etc/ldap.conf
-
+sed -i 's/#nss_base_passwd ou=People,dc=padl,dc=com?one/nss_base_passwd  ou=People,dc=nti310,dc=local/g' /etc/ldap.conf
+sed -i 's/#nss_base_group ou=Group,dc=padl,dc=com\?one/nss_base_group          ou=Group,dc=nti310,dc=local/g' /etc/ldap.conf
+sed -i 's/#nss_base_shadow  ou=People,dc=padl,dc=com\?one/nss_base_shadow ou=People,dc=nti310,dc=local/g' /etc/ldap.conf
+(2 tabs) pw and shadow are single spaces not escaping the question mark
 systemctl restart sshd
 echo "m1xL.ui5" > /etc/ldap.secret
 chmod 0600 /etc/ldap.secret
@@ -39,3 +39,7 @@ ldap-auth-config        ldap-auth-config/binddn string  cn=proxyuser,dc=example,
 while read line; do echo "$line" | debconf-set-selections; done < /tmp/ldap_debconf
 
 
+
+
+
+sed -i 's/#nss_base_passwd  ou=People,dc=padl,dc=com\?one/#nss_base_passwd  ou=People,dc=nti310,dc=local/g' /etc/ldap.conf
