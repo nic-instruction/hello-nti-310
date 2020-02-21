@@ -13,5 +13,10 @@ sed -i "s/host    all             all             127.0.0.1\/32            md5/h
 # put sed into the INSTALLED_APPS variable
 sed -i "40i \ \ \ \ 'Cars'," nti310/settings.py
 
+echo "class Specs(models.Model):
+    name = models.CharField(max_length = 20)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    weight = models.PositiveIntegerField()" >> Cars/models.py
+
 #django admin user creation
 echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@newproject.com','NTI300NTI300')" | python manage.py shell   
