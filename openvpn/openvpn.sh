@@ -3,7 +3,7 @@
 # with firewall rules from here: https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-centos-7
 
 # install openvpn
-yum -y install openvpn
+yum -y install openvpn wget
 
 # set up the static key
 # you will need to download this to your client, but the cloud won't let you do it with the perms it has
