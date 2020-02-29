@@ -9,6 +9,7 @@ yum -y install openvpn
 # you will need to download this to your client, but the cloud won't let you do it with the perms it has
 # so make a copy, chmod the copy to 666 and then download that and rename it to static.key when it lands
 # on your machine
+cd /etc/openvpn
 openvpn --genkey --secret static.key
 
 # grab the server config from my github (notice we grab the raw file)
