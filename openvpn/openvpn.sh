@@ -15,9 +15,11 @@ openvpn --genkey --secret static.key
 wget -O /etc/openvpn https://raw.githubusercontent.com/nic-instruction/hello-nti-310/master/openvpn/server.conf
 
 # configure ip forwarding on the machine, note we needed to do this in the server config when we spun it up too
+# then restart network services
 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 systemctl restart network.service
 
+# configure the firewall to nat, masquerade, and open port 1194
 firewall-cmd --zone=trusted --add-service openvpn
 firewall-cmd --zone=trusted --add-service openvpn --permanent
 firewall-cmd --list-services --zone=trusted
