@@ -1,4 +1,7 @@
 #!/bin/bash
+# based on the tutorial here https://openvpn.net/community-resources/static-key-mini-howto/
+# with firewall rules from here: https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-centos-7
+
 # install openvpn
 yum -y install openvpn
 
