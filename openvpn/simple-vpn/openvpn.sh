@@ -13,7 +13,7 @@ cd /etc/openvpn
 openvpn --genkey --secret static.key
 
 # grab the server config from my github (notice we grab the raw file)
-wget -O /etc/openvpn/server.conf https://raw.githubusercontent.com/nic-instruction/hello-nti-310/master/openvpn/server.conf
+wget -O /etc/openvpn/server.conf https://raw.githubusercontent.com/nic-instruction/hello-nti-310/master/openvpn/simple-vpn/server.conf
 
 # configure ip forwarding on the machine, note we needed to do this in the server config when we spun it up too
 # then restart network services
