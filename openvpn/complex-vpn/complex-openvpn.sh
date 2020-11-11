@@ -10,7 +10,7 @@ tar xfz /tmp/easyrsa
 sudo mkdir /etc/openvpn/easy-rsa
 sudo cp -rf easy-rsa-old-2.3.3/easy-rsa/2.0/* /etc/openvpn/easy-rsa
 chown nicolebade /etc/openvpn/easy-rsa/
-sudo cp /usr/share/doc/openvpn-2.4.8/sample/sample-config-files/server.conf /etc/openvpn
+sudo cp /usr/share/doc/openvpn-2.4.9/sample/sample-config-files/server.conf /etc/openvpn
 wget -O /etc/openvpn/server.conf https://raw.githubusercontent.com/nic-instruction/hello-nti-310/master/openvpn/complex-vpn/server.conf
 sudo openvpn --genkey --secret /etc/openvpn/myvpn.tlsauth
 mkdir /etc/openvpn/easy-rsa/keys
