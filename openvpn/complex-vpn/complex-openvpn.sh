@@ -25,12 +25,12 @@ yum install bind-utils
 # which will be placed in the certificate.
 # Don't leave any of these fields blank.
 #export KEY_COUNTRY="US"
-#export KEY_PROVINCE="NY"
-#export KEY_CITY="New York"
-#export KEY_ORG="DigitalOcean"
-#export KEY_EMAIL="sammy@example.com"
-#export KEY_EMAIL=sammy@example.com
-#export KEY_CN=openvpn.example.com
+#export KEY_PROVINCE="WA"
+#export KEY_CITY="Seattle"
+#export KEY_ORG="MyOrg"
+#export KEY_EMAIL="me@email.com"
+#export KEY_EMAIL=me@email.com
+#export KEY_CN=my.domain.here.com
 #export KEY_NAME="server"
 #export KEY_OU="Community"
 
