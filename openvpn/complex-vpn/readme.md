@@ -1,1 +1,1 @@
-This is the more complex vpn configuration based on https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-centos-7
+This is the more complex vpn configuration based on https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-centos-7 with some updates, since the tutorial does not work 'out of the box'
