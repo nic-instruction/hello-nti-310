@@ -1,0 +1,7 @@
+Region Tweeks:
+
+Remember that your server must be configured to be in the same timezone/region as your endpoint IP.  To get a list of possible regions: timedatectl list-timezones
+
+to set it: timedatectl set-timezone Europe/Berlin
+
+Remember that your certs should match your region as well.  If your endpoint is in Germany, make sure your cert country is germany.
